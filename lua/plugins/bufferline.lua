@@ -2,9 +2,9 @@ return {
     "akinsho/bufferline.nvim",
     opts = {},
     keys = {
-        {"<leader>h", ":BufferLineCyclePrev<CR>", silent = true},
-        {"<leader>l", ":BufferLineCycleNext<CR>", silent = true},
-        {"<leader>p", ":BufferLinePickCR>", silent = true},
-        {"<leader>d", ":bdelete<CR>", silent = true},
+        {"<F9>", ":BufferLineCyclePrev<CR>", silent = true},
+        {"<F10>", ":BufferLineCycleNext<CR>", silent = true},
+        {"<leader>p", ":BufferLinePick<CR>", silent = true},
+        {"<C+w>", ":bdelete<CR>", silent = true},
     }
 }
