@@ -1,10 +1,14 @@
 return {
     "akinsho/bufferline.nvim",
+    version = "*",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {},
     keys = {
-        {"<F9>", ":BufferLineCyclePrev<CR>", silent = true},
-        {"<F10>", ":BufferLineCycleNext<CR>", silent = true},
-        {"<leader>p", ":BufferLinePick<CR>", silent = true},
-        {"<C+w>", ":bdelete<CR>", silent = true},
+        { "<F9>",  "<cmd>BufferLineCyclePrev<CR>", silent = true, noremap = true, desc = "Prev Buffer" },
+        { "<F10>", "<cmd>BufferLineCycleNext<CR>", silent = true, noremap = true, desc = "Next Buffer" },
+        { "gp",    "<cmd>BufferLinePick<CR>",      silent = true, noremap = true, desc = "Pick Buffer" },
+        -- 关闭当前 buffer
+        { "<C-w>", "<cmd>bdelete<CR>",             silent = true, noremap = true, desc = "Close Buffer" },
     }
 }
+
