@@ -1,0 +1,30 @@
+return {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+        require("lualine").setup({
+            options = {
+                theme = "auto",
+                icons_enabled = true,
+                section_separators = "",
+                component_separators = "",
+            },
+            sections = {
+                lualine_a = { "mode" },
+                lualine_b = { "branch" },
+                lualine_c = {
+                    { "filename" },
+                    {
+                        "diagnostics",
+                        sources = { "nvim_lsp" },
+                        symbols = { error = " ", warn = " ", info = " ", hint = " " },
+                    },
+                },
+                lualine_x = { "encoding", "fileformat", "filetype" },
+                lualine_y = { "progress" },
+                lualine_z = { "location" },
+            },
+        })
+    end,
+}
+
