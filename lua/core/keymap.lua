@@ -11,3 +11,7 @@ keymap({ "n", "i", "v" }, "<C-s>", "<Esc>:wa<CR>", opts)
 keymap({ "n", "i", "v" }, "<F5>", function()
   vim.cmd("!rm -rf build && mkdir build && cd build && cmake ..")
 end, { noremap = true, silent = true, desc = "CMake build" })
+
+keymap({ "n", "i", "v" }, "<F6>", function()
+  vim.cmd("make -C ./build")
+end, { noremap = true, silent = true, desc = "make build" })
