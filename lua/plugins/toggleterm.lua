@@ -5,7 +5,7 @@ return {
   config = function()
     require("toggleterm").setup {
       size = 15,
-      open_mapping = [[<F4>]], -- F4 打开/关闭终端
+      open_mapping = [[<C-u>]], -- F4 打开/关闭终端
       shade_terminals = true,
       direction = "float",     -- "float" = 悬浮终端, 还可以是 "horizontal"/"vertical"
       float_opts = {

@@ -17,7 +17,7 @@ return {
         })
 
         -- F3 开关文件树
-        vim.keymap.set("n", "<F3>", "<cmd>NvimTreeToggle<CR>", { silent = true, noremap = true, desc = "Toggle File Tree" })
+        vim.keymap.set({"n", "i", "v"}, "<C-p>", "<cmd>NvimTreeToggle<CR>", { silent = true, noremap = true, desc = "Toggle File Tree" })
     end
 }
 
