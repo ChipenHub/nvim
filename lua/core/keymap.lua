@@ -5,6 +5,7 @@ local opts = { noremap = true, silent = true }
 
 keymap("n", "q", ":q<CR>", opts)
 keymap("n", "Q", ":wq<CR>", opts)
+keymap("n", "U", "<C-r>", opts)
 
 keymap({ "n", "i", "v" }, "<C-s>", "<Esc>:wa<CR>", opts)
 
