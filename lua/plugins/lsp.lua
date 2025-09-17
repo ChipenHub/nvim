@@ -39,6 +39,12 @@ return {
         map("n", "<leader>q", vim.diagnostic.setqflist, "诊断 -> Quickfix")
         map("n", "<leader>dl", vim.diagnostic.setloclist, "诊断 -> LocList")
         map("n", "<leader>ds", vim.lsp.buf.document_symbol, "文档符号列表")
+
+        map("n", "<leader>ca", vim.lsp.buf.code_action, "Code Action")
+
+        map("n", "<leader>cf", function()
+            vim.lsp.buf.code_action({ apply = true })
+        end, "Auto Fix First Code Action")
       end
 
       -- capabilities
