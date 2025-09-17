@@ -41,9 +41,9 @@ keymap({ 'n', 'v' }, 'C', '"_C', opts)
 keymap({ 'n', 'v' }, 's', '"_s', opts)
 keymap({ 'n', 'v' }, 'S', '"_S', opts)
 
--- 把 Y 改成剪切选区/整行到系统剪切板
+-- 把 Y/D 改成剪切选区/整行到系统剪切板
 keymap({ 'n', 'v' }, 'Y', '"+d', { desc = 'Cut to system clipboard' })
-keymap({ 'n', 'v' }, 'YY', '"+dd', { desc = 'Cut all line to system clipboard' })
+keymap({ 'n', 'v' }, 'D', '"+dd', { desc = 'Cut all line to system clipboard' })
 
 -- fase paste
 keymap("i", "<C-k>", "<Esc>pa", opts)
