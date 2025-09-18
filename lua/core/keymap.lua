@@ -26,7 +26,7 @@ keymap("n", "<leader>O", "O<Esc>", opts)
 
 -- 删除到黑洞寄存器，不污染剪切板
 keymap({ 'n', 'v' }, 'd', '"_d', opts)
-keymap({ 'n', 'v' }, 'dd', '"_dd', opts)
+keymap('n', 'dd', '"_dd', opts)
 keymap({ 'n', 'v' }, 'D', '"_D', opts)
 
 keymap({ 'n', 'v' }, 'x', '"_x', opts)
@@ -45,5 +45,14 @@ keymap({ 'n', 'v' }, 'S', '"_S', opts)
 keymap({ 'n', 'v' }, 'Y', '"+d', { desc = 'Cut to system clipboard' })
 keymap({ 'n', 'v' }, 'D', '"+dd', { desc = 'Cut all line to system clipboard' })
 
+-- 拷贝操作中被覆盖的区域不进入剪切板
+keymap('v', 'p', function()
+  -- 取出当前无名寄存器（默认寄存器，通常是系统剪贴板）
+  local reg = vim.fn.getreg('"')
+  local regtype = vim.fn.getregtype('"')
+  vim.cmd('normal! p')
+  vim.fn.setreg('"', reg, regtype)
+end, opts)
+
 -- fase paste
-keymap("i", "<C-k>", "<Esc>pa", opts)
+keymap('i', '<C-k>', '<C-r>+', opts)
