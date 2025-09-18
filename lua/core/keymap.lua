@@ -56,3 +56,6 @@ end, opts)
 
 -- fase paste
 keymap('i', '<C-k>', '<C-r>+', opts)
+
+-- delete trailing Space
+keymap('n', '<leader>ts', [[:%s/\s\+$//<CR>]], opts)
