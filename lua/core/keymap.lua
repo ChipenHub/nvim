@@ -2,6 +2,8 @@ vim.g.mapleader = " "
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
+-- 映射（可选）
+keymap("i", "jj", "<Esc>", opts)
 -- 基本操作
 keymap("n", "q", ":q<CR>", opts)
 keymap("n", "Q", ":wq<CR>", opts)
