@@ -4,6 +4,7 @@ local opts = { noremap = true, silent = true }
 
 -- 映射（可选）
 keymap("i", "jj", "<Esc>", opts)
+
 -- 基本操作
 keymap("n", "q", ":q<CR>", opts)
 keymap("n", "Q", ":wq<CR>", opts)
@@ -37,11 +38,6 @@ keymap({ 'n', 'v' }, 'C', '"_C', opts)
 -- substitutekeymap
 keymap({ 'n', 'v' }, 's', '"_s', opts)
 keymap({ 'n', 'v' }, 'S', '"_S', opts)
-
--- 进系统剪贴板
-keymap({ 'n', 'v' }, '<leader>y', '"+y', opts)
-keymap({ 'n', 'v' }, '<leader>d', '"+d', opts)
-
 -- Visual 模式粘贴不污染临时寄存器
 keymap('v', 'p', function()
   local reg = vim.fn.getreg('"')
